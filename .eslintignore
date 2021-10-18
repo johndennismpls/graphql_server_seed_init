@@ -1,0 +1,9 @@
+**/node_modules/**
+**/test_reports/**
+/docs/**/*
+apollo.config.js
+webpack.config.js
+/templates/**
+/dist/**
+package.json
+/src/graphql/resolver.types.ts

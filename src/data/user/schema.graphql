@@ -1,0 +1,29 @@
+type User @cacheControl(maxAge: 10, scope: PUBLIC ) {
+  id: ID!
+  username: String!
+  firstName: String
+  lastName: String
+}
+
+input CreateUserPayload {
+  username: String!
+  password: String!
+  firstName: String
+  lastName: String
+}
+
+input LoginPayload {
+  username: String!
+  password: String!
+}
+
+extend type Query {
+  me: User
+  user(id: ID!): User!
+  users: [User!]!
+}
+
+extend type Mutation {
+  createUser(payload: CreateUserPayload!): User!
+  login(payload: LoginPayload!): String!
+}
